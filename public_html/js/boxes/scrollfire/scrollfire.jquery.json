@@ -1,0 +1,30 @@
+{
+  "name": "scrollfire",
+  "title": "jQuery Scrollfire",
+  "version": "1.4.0",
+  "description": "Allows useful callbacks to be fired upon elements scrolling into and out of view from both the top and bottom of the viewport/window. Additionally, provides a mechanism to animate parallax elements.",
+  "keywords": [
+    "scroll", "scrolling", "parallax", "responsive", "event", "DOM", "jquery", "window", "monitoring", "waypoint", "infinite"
+  ],
+  "author": {
+    "name": "Wil Neeley",
+    "url": "https://github.com/Xaxis"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.githubusercontent.com/Xaxis/jquery.scrollfire/master/LICENSE.txt"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.4 <2.1"
+  },
+  "homepage": "https://github.com/Xaxis/jquery.scrollfire",
+  "doc": "https://github.com/Xaxis/jquery.scrollfire",
+  "maintainers": [
+    {
+      "name": "Wil Neeley",
+      "url": "https://github.com/Xaxis"
+    }
+  ]
+}

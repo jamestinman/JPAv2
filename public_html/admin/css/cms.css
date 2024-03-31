@@ -1,0 +1,24 @@
+* { font-family: helvetica;}
+html, body, h1, h2, h3, h4, h5, p, a, div { margin:0; padding: 0; color: #000000;}
+
+a { text-decoration: none; font-weight: bold;}
+a:hover { text-decoration: underline;}
+
+div#website {width:100%; }
+
+div#sidebar { width: 10vw; padding: 5px;}
+div#sidebar img { width: 100%; padding-bottom: 20px;}
+div#content {width: 87vw; overflow-x: scroll; padding: 5px;}
+
+div#content table textarea { height: 8vw;}
+div#content table td { min-width: 10vw;}
+div#content table input { width: 100%;}
+
+div#content .editTable table {width:100%;}
+div#content .editTable { max-width: 80vw; overflow: hidden;}
+div#content .editTable textarea { width:100%; min-height: 500px; font-size: 14px;}
+div#content .editTable td { min-width: 4vw;}
+
+.hidden { display:none;}
+
+tr.highlight { background-color: #dddddd;}

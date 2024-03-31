@@ -1,0 +1,210 @@
+<html>
+	<head>
+		<title>JPA Vibes!!!</title>
+		<style>canvas { width: 100%; height: 100%; background-color: #111; }</style>
+	</head>
+	<body>
+		<script src="js/libs/three.min.js"></script>
+		<script src="js/libs/jquery-1.7.2.min.js"></script>
+		<script src="js/johnpeel.js"></script>
+		<script>
+      var isMouseDown = false, onMouseDownPosition, radious = 800, theta = 0, onMouseDownTheta = 0, phi = 0, onMouseDownPhi = 0;
+      var numRecords=0, firstID=false, lastID=false, letter='J';
+			
+			var scene = new THREE.Scene();
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			document.body.appendChild(renderer.domElement);
+
+      // Mouse
+      onMouseDownPosition = new THREE.Vector2();
+
+			// Camera
+			var camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 10000 );
+			repositionCamera(0);
+
+      // Hard cube
+			var g1 = new THREE.CubeGeometry(100,100,100,1,1,1);
+			var material = new THREE.MeshLambertMaterial({
+			  "color": 0,
+        "ambient": 0,
+        "emissive": 0,
+        "opacity": 0.5,
+        "transparent": false,
+        "wireframe": false
+      });
+			var hardCube = new THREE.Mesh(g1, material);
+			hardCube.position={x:0, y:200, z:0};
+      scene.add(hardCube);
+
+      // Wire cube
+			var g2 = new THREE.CubeGeometry(102,102,102,1,1,1);
+			var material = new THREE.MeshBasicMaterial({
+			"color": 0xFFFFFF,
+			"wireframe": 1
+      });
+			var wireCube = new THREE.Mesh(g2, material);
+			wireCube.position={x:0, y:200, z:0};
+      scene.add(wireCube);
+
+      // Moon
+			var geometry = new THREE.SphereGeometry(100, 9, 9);
+      var material = new THREE.MeshPhongMaterial({
+        "color": 0xCCCCCC,
+        "ambient": 0xFFFF00,
+        "emissive": 0x333333,
+        "transparent": false,
+        "wireframe": false
+      });
+			var moon=new THREE.Mesh(geometry, material);
+			moon.position={x:0, y:0, z:0};
+			scene.add(moon);
+
+      // Light
+      var light=new THREE.PointLight(0xFFFFFF,1,0);
+      light.position={x:-183, y:350, z:0}
+			scene.add(light);
+			var bulb=new THREE.Mesh(new THREE.SphereGeometry(10,10,10), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}));
+			bulb.position=light.position;
+			scene.add(bulb);
+      // Little bit of ambient lighting too
+      var ambientLight = new THREE.AmbientLight(0xbbbbbb);
+      scene.add(ambientLight);
+
+      // Pole
+      var pole=new THREE.Mesh(
+        new THREE.CylinderGeometry(200,200,20,20),
+        new THREE.MeshBasicMaterial({
+          "color": 0xCCCCCC,
+          "wireframe": true
+        })
+      );
+      pole.position={x:0, y:0, z:0}
+      scene.add(pole);
+
+      // Records
+      var positionRecord=function(id, n) {
+        var ang=(n*360/numRecords)+phi/2;
+        var r=500;
+        records[id].mesh.position={x:r * Math.sin( ang * Math.PI / 180 ), y:200+(100*Math.cos((n*2+phi) * Math.PI/180)), z:r * Math.cos( ang * Math.PI / 180 )};
+      }
+      
+      var createRecords=function() {
+        for (var id in records) {
+          if (!firstID) firstID=id;
+          var thumbUrl="./albums/img/"+letter+"/thumbs/"+id+"-"+lpad(records[id].card,'0',5)+"-1.jpg"
+          records[id].mesh=new THREE.Mesh(
+            new THREE.CubeGeometry(100,100,4,1,1,1),
+            new THREE.MeshLambertMaterial({ map: THREE.ImageUtils.loadTexture(thumbUrl)})
+          );
+          positionRecord(id, numRecords);
+          records[id].mesh.overdraw = true;
+          scene.add(records[id].mesh);
+          numRecords++;
+        }
+        lastID=id;
+      }
+
+      // Floor
+      var floor=new THREE.Mesh(
+        new THREE.PlaneGeometry(200,200,20,20),
+        new THREE.MeshPhongMaterial({
+          "color": 0xCCCCCC,
+          "ambient": 0xFFFF00,
+          "emissive": 0xFFFFFF,
+          "specular": 0x111111,
+          "wireframe": true
+        })
+      );
+      floor.position={x:0,y:0,z:0}
+      floor.rotation.x=-1*Math.PI/2;
+      floor.scale={x:5, y:5, z:5}
+	    scene.add(floor);
+
+      // RENDER
+			var render = function () {
+				requestAnimationFrame(render);
+        // camera.rotation.z+=0.01;
+        hardCube.rotation.z+=0.05;
+        wireCube.rotation.z+=0.05;
+        pole.rotation.y+=0.02;
+				renderer.render(scene, camera);
+				phi++;
+				var n=0;
+        for (var id in records) {
+          records[id].mesh.rotation.y+=0.03;
+          positionRecord(id, n++);
+        }
+			};
+
+      function repositionCamera(theta, phi) {
+        camera.position.x = radious * Math.sin( theta * Math.PI / 360 ); // * Math.cos( phi * Math.PI / 360 );
+        camera.position.y = radious/2;
+        // camera.position.y = radious * Math.sin( phi * Math.PI / 360 );
+        camera.position.z = radious * Math.cos( theta * Math.PI / 360 ); // * Math.cos( phi * Math.PI / 360 );
+        // camera.rotation={x:-0.5,y:0,z:0};
+        camera.lookAt(new THREE.Vector3(0,0,0));
+        camera.updateMatrix();
+      }
+
+			function onDocumentMouseDown( event ) {
+				event.preventDefault();
+				isMouseDown = true;
+				onMouseDownTheta = theta;
+				onMouseDownPhi = phi;
+				onMouseDownPosition.x = event.clientX;
+				onMouseDownPosition.y = event.clientY;
+			}
+
+			function onDocumentMouseMove( event ) {
+				event.preventDefault();
+				if ( isMouseDown ) {
+					theta = - ( ( event.clientX - onMouseDownPosition.x ) * 0.5 ) + onMouseDownTheta;
+					// phi = ( ( event.clientY - onMouseDownPosition.y ) * 0.1 ) + onMouseDownPhi;
+					// phi = Math.min( 180, Math.max( 0, phi ) );
+				  repositionCamera(theta,phi);
+				}
+
+			}
+
+			function onDocumentMouseUp( event ) {
+				event.preventDefault();
+				isMouseDown = false;
+				onMouseDownPosition.x = event.clientX - onMouseDownPosition.x;
+				onMouseDownPosition.y = event.clientY - onMouseDownPosition.y;
+      }
+
+			function onDocumentKeyDown( event ) {
+				switch( event.keyCode ) {
+					case 87: hardCube.position.z-=100; break; // W
+					case 65: hardCube.position.x-=100; break; // A
+					case 83: hardCube.position.z+=100; break; // S
+					case 68: hardCube.position.x+=100; break; // D
+					break;
+				}
+				wireCube.position=hardCube.position;
+			}
+
+			function onDocumentKeyUp( event ) {
+				switch( event.keyCode ) {
+					case 16: isShiftDown = false; render(); break;
+				}
+			}
+
+      document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+      document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+      document.addEventListener( 'mouseup', onDocumentMouseUp, false );
+      document.addEventListener( 'keydown', onDocumentKeyDown, false );
+      document.addEventListener( 'keyup', onDocumentKeyUp, false );
+
+      $(document).ready(function(){
+        // Pick up information about what we are displaying from the URL params
+        if (p("letter")) letter=p("letter");
+        // Load the data for this part of the collection
+        datafile="data/records/"+letter+".js";
+        $.getScript(datafile).done(function(){ createRecords(); render(); }).fail(function() { console.log("Could not load datafile "+datafile); });
+      });
+
+    </script>
+	</body>
+</html>

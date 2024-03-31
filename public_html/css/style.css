@@ -1,0 +1,360 @@
+/* =============================================================================
+   HTML5 Boilerplate CSS: h5bp.com/css LEON IS UNCOOL SICK BURN BRO
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html {overflow:hidden;} /* kill the main scrollbar */
+html, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body { margin: 0; font-size: 1em; line-height: 1.4; }
+
+::-moz-selection { background: #aaa; color: #fff; text-shadow: none; }
+::selection { background: #aaa; color: #fff; text-shadow: none; }
+
+a { color: #fff; }
+a:visited { color: #ffed00; }
+a:hover { color: ; #fff; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
+a.playHover {position: relative; display: block; width:75px; height: 75px;}
+a.playHover .playBtn {position: absolute; top: 0; left:0; display:none; width:75px; height: 75px;}
+a.videoHover {position: relative; display: block; width:133px; height: 75px;}
+a.videoHover .videoBtn {position: absolute; top: 0; left:0; display:none; width:133px; height: 75px;}
+
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+dfn { font-style: italic; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ins { background: #ff9; color: #000; text-decoration: none; }
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+pre, code, kbd, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+small { font-size: 85%; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+svg:not(:root) { overflow: hidden; }
+
+figure { margin: 0; }
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+label { cursor: pointer; }
+legend { border: 0; *margin-left: -7px; padding: 0; white-space: normal; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: normal; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
+button[disabled], input[disabled] { cursor: default; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+.chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
+
+.yellow { color: #f6d404; }
+.white { color: #fff; }
+
+
+/* ===== Primary Styles ========================================================
+   Author: Sam Parmenter
+   ========================================================================== */
+
+html, body { min-height: 100%; height: 100%; background: #000; }
+
+
+#clearence { float: left; height: 50%; margin-bottom: -320px; }
+
+#main { 
+  margin: 0 auto;
+  position: relative; 
+  height: 640px; 
+  min-width: 960px;
+  max-width: 1400px;
+  clear: both; 
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Side Bar */
+#main #sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 256px;
+  height: 640px;
+  background: url(../img/tile.png) left top repeat;
+  z-index: 10;
+}
+#main #sidebar #logo { top: 0px; left: 0px; width: 256px; height: 180px; }
+#main #sidebar #items {
+  margin: 180px 0 0 0; padding: 0;
+  width: 256px; height: 460px;
+  overflow: auto;
+}
+#main #sidebar ul {
+  list-style: none;
+  margin: 0; padding: 0;
+  width: 256px;
+}
+#main #sidebar li {  width: 256px; height: 200px; margin:0; padding:0; border:0; }
+
+/* Menu Bar */
+#menubar {
+  position: absolute;
+  top: 0;
+  left: 256px;
+  height: 16px;
+  color: #fff;
+  z-index: 10;
+  margin: 0; padding: 0;
+}
+#menubar ul {
+  list-style: none;
+  margin: 0px; padding: 0;
+  height: 16px;
+}
+#menubar ul li { float: left; line-height: 16px; text-align: center; width: 88px; }
+#menubar ul li a { display: block; color: #fff; text-decoration: none; padding: 4px 0 3px 0; width: 88px; font-size: 11px;}
+#menubar ul li.alt a{  }
+#menubar ul li a:hover { background: #f6d404; color: #000;}
+#menubar ul li:hover ul { display: block;}
+
+/* Sub-menu */
+#menubar ul li ul { position: absolute; display: none; }
+/* Invert the highlighting to checkerboard the sub-menu */
+#menubar ul li ul li a { background: url(../img/tile.png) left top repeat; }
+/*
+#menubar ul li ul li.alt a { background: url() left top repeat; }
+#menubar ul li.alt ul li a { background: url() left top repeat; }
+#menubar ul li.alt ul li.alt a { background: url(../img/tile.png) left top repeat; }
+*/
+#menubar ul li ul li a:hover, #menubar ul li.alt ul li a:hover { background: #fff; color: #000;}
+a.noLink { font-style: italic; }
+#menubar ul li ul li a.noLink:hover { background: url(../img/tile.png) left top repeat; color: #fff; }
+
+#main #content { 
+  width: 1400px; 
+  height: 640px;   
+  position: relative;
+  background: url(../img/john-peel-background.jpg) left top no-repeat; 
+  display: none;
+  z-index: 5;
+}
+
+#main #content #bg { position: absolute; left: 0; top: 0; }
+
+#mousecapture { 
+  width: 100%; 
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.left { 
+ left: 0; 
+}
+
+.right { 
+  right: 0;
+}
+
+
+
+/** Static page elements **/
+
+
+/* Titles, tag lines and logo etc  */
+
+#space,
+#logo,
+#lottery {
+  position: absolute; z-index: 20;
+}
+#info { position: absolute; z-index: 99; left: 60px; top: 600px; color: #fff; font-size: 0.8em; }
+
+#lottery { bottom: 30px; left: 44px; }
+
+/* HOME PAGE YELLOW OVERLAYS */
+.overlay { position: absolute; opacity:0; z-index: 20; overflow: visible; }
+.hover { position: absolute; display:none; z-index: 19; }
+#videos { left: 943px; bottom: 224px;  }
+#videos-h {left: 887px; bottom: 130px; }
+#sessions { left: 315px; bottom: 204px; width: 250px; height: 105px; }
+#sessions-h { left: 248px; bottom: 136px; }
+#records { right: 348px; bottom: -14px; width: 160px; height: 210px; }
+#records-h { right: 298px; bottom: -74px; }
+#radio { right: 215px; top: 213px; width: 160px; height: 125px; }
+#radio-h { right: 163px; top: 76px; }
+#photos { right: 415px; top: 218px; width: 90px; height: 80px; }
+#photos-h { top: 123px; right: 356px; }
+
+#speaker, #speaker-h { right: 710px; top: 135px; width: 109px; height: 116px; }
+
+#football { right: 600px; top: 165px; width: 38px; height: 44px; }
+#football-h { right: 585px; top: 130px; width: 83px; height: 106px; }
+#blog { right: 100px; top: 555px; width: 85px; height: 69px; }
+#blog-h { right: 30px; top: 446px; width: 223px; height: 224px; }
+#twitter { right: 277px; top: 354px; width: 80px; height: 80px; }
+#twitter-h { right: 277px; top: 354px; width: 80px; height: 80px; }
+#facebook { right: 234px; top: 435px; width: 84px; height: 87px; }
+#facebook-h { right: 234px; top: 435px; width: 84px; height: 87px; }
+#Gplus { right: 139px; top: 435px; width: 83px; height: 78px; }
+#Gplus-h { right: 139px; top: 435px; width: 83px; height: 78px; }
+#pinterest { right: 142px; top: 375px; width: 87px; height: 56px; }
+#pinterest-h { right: 142px; top: 374px; width: 87px; height: 56px; }
+#popAbout { width: 880px; }
+img.hover { position: absolute; display: block; z-index: 15; display: none; }
+
+
+/* SHELVES */
+#theShelves { position: relative; width:960px; height: 640px; overflow: hidden; margin: auto;}
+#theShelfStaticA { position: absolute; display: none; }
+#theShelfStaticB { position: absolute; display: none; }
+#theShelfA { position: absolute; display: none; }
+#theShelfB { position: absolute; display: none; }
+#overlay { position: absolute; top: 0; left: 0; width:960px; height: 640px; }
+#leftNav { position: absolute; top: 0; left: 0; width: 50px; height: 640px; background-image: url(../albums/img/left-nav.png); opacity: 0.25; display: none; }
+#rightNav { position: absolute; top: 0; right: 0; width: 100px; height: 640px; background-image: url(../albums/img/right-nav.png); opacity: 0.25; display: none; }
+.sleeve { position: absolute; /* border: 1px solid red; */}
+.trigger { position: absolute; right: 0px;  top: 0; width: 100px; height: 300px; /* border: 1px solid green; */ }
+
+/* RECORDBOXES */
+#theLetterShelf { position: relative; width:960px; height: 640px; overflow: hidden; margin: auto; }
+#debug { color: #fff; display: none; }
+#content #debug { position: absolute; left: 300px; top: 300px; z-index: 30;}
+#thePath { color: #fff; }
+#bigMessage { color: #fff; font: 32px Arial; margin: 500px auto 0 auto; text-align: center; display: none; }
+#bigMessage .small { font-size: 16px; }
+.arrowBtn { cursor:pointer; }
+
+/* 7" BOX */
+#boxContainer7 {
+  position: relative;
+  width: 100%; height: 100%;
+  margin: 0; border: 0; padding: 0;
+}
+#boxHeader7 {
+  position: absolute;
+  top: 0; left: 0;
+  padding-left: 332px;
+  height: 88px;
+  width: 100%;
+  z-index: 9;
+}
+#boxHeader7 table {
+  margin-top: -20px;
+}
+#boxInfo7 {
+  color: #fff;
+  margin: 10px 0 0 325px;
+  height: 640px;
+  overflow: auto;
+  background: url(../singles/img/singlesbg.jpg);
+  z-index: 7;
+}
+#boxNav7 {
+  position: absolute;
+  top: 27px; left: 10px;
+  width: 315px;
+  height: 600px;
+  background: url(../singles/img/boxes/empty.png);
+  z-index: 11;
+}
+
+h1, h2 { letter-spacing:2px; font-weight: normal; color: #f6d404; }
+#boxInfo7 h2 { margin-left: 8px; }
+.nav7Img { display: none; width: 315px; height: 600px; position: absolute; top: 0; left: 0; z-index: 15; }
+#navFrame { position:absolute; width: 313px; height: 198px; z-index: 17; }
+#boxInfo7 .single7 { position: relative; clear: both; width: 645px; height: 445px;}
+#boxInfo7 .singleGallery { float: left; width: 345px; }
+#boxInfo7 .singleBlurb { float: left; width: 300px; font-size: 0.9em; }
+#boxInfo7 .singleBlurb p, #boxInfo7 td { font-size: 0.8em; }
+#boxInfo7 h3 { font-size: 0.9em; color: #f6d404; }
+#boxInfo7 hr { clear: both; }
+
+/* Pop-ups */
+#popCard { width: 300px; }
+#popCover { width: 379px; }
+#popCard img { width: 340px; }
+#popSocial td { padding: 0; }
+#popPinIt { padding-top: 10px;}
+
+/* tab */
+#theTab { position: absolute; top: 50px; display: none; width: 256px; }
+#yellowTriangle { position: absolute; top: 0; width: 19px; height: 24px; }
+#tabArtist { position: absolute; background-color: #f6d404; color: #000; top:0; height: 24px; font-weight: bold; padding: 2px 10px 0 10px; overflow: visible}
+#theInfo {position: absolute; background-color: #000; color: #fff; font-size: 12px; left: 20px; top: 24px; width: 220px; }
+.infoCol{ position: relative; background-color: #000; width: 100px; height: 100px; float: left; padding: 5px;  }
+#tabCardNum {color: #f5d304; position: absolute; bottom: 5px; left: 5px; font-size: 0.9em;}
+
+/* Home-page image fades by Leon*/
+
+.fade {opacity: 1;transition: opacity .25s ease-in-out;-moz-transition: opacity .25s ease-in-out;-webkit-transition: opacity .25s ease-in-out;}
+.fade:hover {opacity: 0.7;}
+
+/* =============================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (max-width: 960px) {
+	/* Style adjustments for viewports that meet the condition */
+
+  #main #content { 
+
+  }
+}
+
+/* =============================================================================
+   Non-Semantic Helper Classes
+   ========================================================================== */
+
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+
+/* =============================================================================
+   Print Styles
+   ========================================================================== */
+ 
+@media print {
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* h5bp.com/t */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}

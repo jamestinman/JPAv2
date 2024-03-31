@@ -1,0 +1,22 @@
+# ignore Apple files etc
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ignore specific folders
+archiver/i
+
+# ignore stuff we use for dev
+*.dmg
+*.ps
+*.iso
+*.gz
+*.zip
+*.tar
+*.rar
+*.log
+

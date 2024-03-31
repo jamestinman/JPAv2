@@ -1,0 +1,1 @@
+rename.py --replace=D0 G0 *.jpg

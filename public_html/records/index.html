@@ -1,0 +1,124 @@
+<?php 
+
+$includePath=realpath(dirname(__FILE__).'/../../include/');
+require_once($includePath.'/recordbox.php');
+
+$boxID=p('boxID',false);
+$recordID=p('recordID',false);
+$artistID=p('artistID',false);
+$letter=p('letter',false);
+$tagID=p('tagID',false);
+$jpID=p('jpID',false);
+if ($jpID) $recordID=findRecordID($jpID);
+
+if ($boxID) {
+    $box=getRecordBoxData($boxID);
+    if ($box['cmsBox']==1) {
+        $recordBox=getCMSRecordBox($boxID);
+        $html=outputRecordBox($recordBox);
+        $pageInfo=$recordBox;
+    } else {
+        $html=outputRecordBox($boxID);
+        $pageInfo=getRecordBox($boxID);
+    }
+} else if ($recordID) {
+    $pageInfo=getRecordPage($recordID);
+    $html=outputRecordPage($recordID);
+} else if ($artistID) {
+    $pageInfo=getArtistPage($artistID);
+    $html=outputArtistPage($artistID);
+} else if ($letter) {
+    $pageInfo=getLetterPage($letter);
+    $html=outputLetterPage($letter);
+} else if ($tagID) {
+    $pageInfo=getTagPage($tagID);
+    $html=outputTagPage($tagID);
+} else {
+    // give up and go back to home page
+    header('Location: /');
+} 
+ob_start();
+
+?>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <!-- page title, desc, open graph and twitter -->
+        <?php echo getMetadata($pageInfo); ?>
+    
+        <!-- record box css -->
+        <?php echo getCSS(); ?> 
+
+        <!-- externally supplied js -->
+        <?php echo getLibraries(); ?>
+
+        <!-- old scripts for light box -->
+        <?php echo getMainSiteScripts(); ?>
+        
+        <!-- record box JS -->
+        <?php echo getRecordBoxJS(); ?>
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <?php
+            // things like the header have been moved into their own files
+            // so they can be changed across all pages in one go
+            //include_once('../include/elements/header.html');
+            require_once($includePath.'/elements/header.html');
+        ?>        
+        
+        <script src="/js/boxes/recordBox.js"></script>
+
+        <div id='ajaxContent'>
+            <?php
+                echo $html;
+            ?>
+        </div> <!-- this is where we're going to dump all the ajax'd stuff and see what happens -->
+        
+        <?php
+            // $pageInfo comes from whatever kind of box/page we're dealing with.
+            echo getPageBottom($pageInfo); // includes clear div, social buttons, white space at bottom of page
+        ?>
+        
+        <script>
+            <?php echo getGoogleAnalytics(); ?>
+            if(window.location.href.indexOf("?") > -1) { // query string that needs converting into real url
+                var newUrl=origin+'/<?php echo $pageInfo['slug'];?>';
+                var newTitle='<?php echo addslashes($pageInfo['title']);?>';
+                history.pushState({}, newTitle, newUrl);
+            }
+    
+        </script>
+        
+        <!-- SOCIAL MEDIA APIs -->
+        <?php echo getSocialAPIs(); ?>
+
+        <!-- the following styles must be at the bottom so they load after video-js.css -->
+        <style>
+            .video-js {padding-top: 56.25%}
+            .vjs-fullscreen {padding-top: 0px}
+        </style>
+        <div id='playerPile'>
+        
+        </div>
+        <?php
+            // instead of having the same player code on every page, it has been moved to it's own file.
+            // including this html file will just insert it right here in the page.
+            require_once($includePath.'/elements/player.html');
+        ?>
+    </body>
+</html>
+
+<?php 
+
+$output = ob_get_clean();
+header('Content-length: ' . strlen($output));
+header("cache-control: no-cache");
+
+echo $output;
+
+?>

@@ -1,0 +1,105 @@
+<div id="player">
+    <div class="playerInner">
+
+        <div class="playerThumb">
+            <img id='jpaPlayerThumb' src="/img/logo.png">
+        </div>
+
+        <div class="playerInfo" id='jpaTrackInfo'>
+            Track name - Artist
+        </div> 
+
+        <div class="playerExpand">
+            <a href="#" onClick="if ($('#player').css('bottom')!='0px') { $('#player').animate({'bottom':'0px'}, 500); $('#expandCollapseBtn').attr('src','/img/boxes/controls/player-min.png'); } else { $('#player').animate({'bottom':'-86px'}, 500); $('#expandCollapseBtn').attr('src','/img/boxes/controls/player-expand.png');  } return false;"><img id='expandCollapseBtn' src="/img/boxes/controls/player-expand.png"></a>
+        </div>   
+
+        <div class="spacer"></div>
+
+        
+        <div class="playerControls">
+
+            <div class="playerBtn" id='jpaPrev'>
+                <img src="/img/boxes/controls/back.png" class="fade" width="31" height="21">
+            </div> 
+            <div class="playerBtn" id='jpaPause'>
+                <img src="/img/boxes/controls/pause.png" width="21" height="21" class="fade">
+            </div>
+            <div class="playerBtn" id='jpaPlay'>
+                <img src="/img/boxes/controls/play.png" width="21" height="21" class="fade">
+            </div> 
+
+            <div class="playerBtn" id='jpaNext'>
+                <img src="/img/boxes/controls/skip.png" class="fade"  width="31" height="21">
+            </div> 
+
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="playerScrubber">
+            <div class="playerTime" id='jpaPlayerProgress'>
+                00:00
+            </div>
+            <div class="playerBar">
+                <div id='jpaProgressBar'>
+                    <div id='jpaLoadedBar'></div>
+                    <div id='jpaProgressMade'></div>
+                </div>
+            </div>
+            <div class="playerTime" id='jpaPlayerTotal'>
+                00:00
+            </div>
+        </div>
+
+        <div class="spacerTwo"></div>
+
+         <div class="playerControlsPhone">
+
+            <div class="playerBtn" id='fakeJpaPrev'>
+                <img src="/img/boxes/controls/back.png"  width="31" height="21" class="fade">
+            </div> 
+            <div class="playerBtn" id='fakeJpaPause'>
+                <img src="/img/boxes/controls/pause.png" width="21" height="21" class="fade">
+            </div>
+            <div class="playerBtn" id='fakeJpaPlay'>
+                <img src="/img/boxes/controls/play.png" width="21" height="21" class="fade">
+            </div> 
+
+            <div class="playerBtn" id='fakeJpaNext'>
+                <img src="/img/boxes/controls/skip.png"  width="31" height="21" class="fade"/>
+            </div> 
+            
+        </div>
+
+        <div class="playerPlaylist">
+            <a href='#' onClick="if ($('#playlistDock').css('display')=='block') { $('#playlistDock').animate({'opacity':0}, 500, function() { $('#playlistDock').css({'display':'none'}); }); } else { $('#playlistDock').css({'display':'block','opacity':0}).animate({'opacity':1}, 500); } return false;"><img src="/img/boxes/controls/playlist.png" class="fade"></a>
+
+            <div id="playlistDock" style="display:none;">
+                 <div id='jpaPlaylist' class="playlistContainer">
+                    <div class="playlistitem">
+                        1.
+                        Bike<br>
+                        <span>Pink Floyd</span>
+                    </div>
+                    <div class="playlistitem">
+                        2.
+                        Track Title<br>
+                        <span>Pink Floyd</span>
+                    </div>
+                    <div class="playlistitem playing">
+                        3.
+                        Track Title<br>
+                        <span>Pink Floyd</span>
+                    </div>
+                 </div>
+            </div>
+        
+        </div>
+
+        <div class="playerVolume" id='jpaMute'>
+            <img src="/img/boxes/controls/volume.png" width="27" height="21" class="fade notMuted">
+            <img src="/img/boxes/controls/volume-muted.png" width="27" height="21" class="fade muted">
+        </div>
+    
+    </div>
+</div> <!-- #player -->

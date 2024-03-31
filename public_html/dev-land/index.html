@@ -1,0 +1,873 @@
+<?php include_once('../../include/recordbox.php'); ?>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Test: Mr Thing</title>
+        <meta name="description" content="The first of 6 Record Boxes commissioned by The Space has been compiled by Joe Boyd. Legendary producer and founder of the UFO club in the 1960s.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- record box css -->
+        <link rel="stylesheet" href="../css/boxes/normalize.min.css">
+        <link rel="stylesheet" href="../css/popups.css">
+        <link rel="stylesheet" href="../css/boxes/main.css">
+        <link rel="stylesheet" href="../css/boxes/jpaplay.css">
+        <link rel="stylesheet" href="../js/boxes/fancybox/jquery.fancybox.css">
+        <link rel="stylesheet" href="../js/boxes/video-js/video-js.css">
+
+        <!-- externally supplied js -->
+        <script src="../js/boxes/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script src="../js/boxes/jquery.min.js"></script>
+        <script src="../js/boxes/video-js/video.js"></script>
+        <script src="../js/boxes/fancybox/jquery.fancybox.min.js"></script>
+        <script src="../js/boxes/three.min.js"></script>
+        <script src="../js/boxes/ThreeCSG.js"></script>
+        <script src="../js/boxes/scrollfire/jquery.scrollfire.js"></script>
+        <script src="../js/boxes/soundmanager/soundmanager2-jsmin.js"></script>
+        <script src="../js/libs/galleria-1.4.2.min.js"></script>
+        <script src="http://www.youtube.com/iframe_api"></script>
+
+        <!-- old scripts for light box -->
+        <script src="../data/records/allRecords.js?v=2"></script>
+        <script src="../js/johnpeel.js"></script>
+        <script src="../js/popups.js"></script>
+        
+        <!-- record box JS -->
+        
+        <script src="../js/boxes/jpaplay.js?v='.$version.'"></script>
+        <script src="../js/boxes/jpaFx.js?v='.$version.'"></script>
+        <script src="../js/boxes/easing.js"></script>
+        <script src="../data/boxes/playlist.js?v='.$version.'"></script>
+        <script src="../js/boxes/plugins.js"></script>
+
+        <meta property="og:title" content="John Peel Record Boxes - Joe Boyd" />
+        <meta property="og:url" content="http://johnpeelarchive.com/joe-boyd//" />
+        <meta property="og:image" content="http://johnpeelarchive.com/joe-boyd/img/joe-boyd-share-image.jpg" />
+        <meta property="og:site_name" content="John Peel Archive" />
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div id="header">
+            <div class="headerinner">
+                <a href='/'><img src="/img/boxes/john-peel-record-boxes-logo.png" class="logo"></a>
+                <a href='http://www.thespace.org/'><img src="/img/boxes/first-word-records-logo.png" class="spacelogo"></a>
+            </div>
+        </div> <!-- #header -->
+
+        <div id="headerimageWrapper"> 
+
+            <div id="headerimageContainer" class="parallax">
+                <img id="headerimage" src="/content/mr-thing/mr-thing-header.jpg">           
+            </div> 
+
+            <div class='intro' id='introText' style="opacity: 1; margin-top: 0px;">
+                <h1>Mr Thing's Record Box</h1>
+                <div style='clear:both;'></div>
+                <p>In this record box, Hip Hop aficionado Mr Thing takes us on a personal journey back into some overlooked hip hop records of the 1980's.</p>
+            </div>
+
+            
+
+        </div>
+
+        
+        <!-- sample video with subtitles working -->
+        <!--
+        <div class="mainvid" id='mainVideo' style='overflow: hidden;'>
+            <div id='mainFilm' class='inlineVideo main-video-container video-js vjs-default-skin'>
+                <video width="auto" height="auto" controls="true" id='mainFilmJS' poster="img/main-video-shield.jpg">
+                    <source src="video/joe-boyd-film.mp4" type="video/mp4">
+                    <source src="video/joe-boyd-film.ogv" type="video/ogg">
+                    <source src="video/joe-boyd-film.webm" type="video/webm">
+                    <track label="English" kind="captions" srclang="en" src="video/joe-boyd-film.vtt" default>
+                </video>
+                <div class="mainVideoShield"><img src="/content/brian-eno/main-video-shield.jpg"/></div>
+                <div class="mainVideoControls">
+                    <div class="mainVideoBtn">
+                        <a onClick='playMainFilm();'><img src="img/main-video-play-btn.png" class="fade"></a>
+                    </div>
+                    <div class="mainVideoInfo">
+                        <span>Joe Boyd explores John Peel's record collection</span><br>
+                        Duration: 27:07
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        
+        <div class="introPara">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla lacinia gravida lorem, quis consectetur sapien. Pellentesque tincidunt quis felis id tincidunt. Vestibulum ullamcorper libero ac enim semper, id mattis nisl mollis. Duis neque augue, ullamcorper sed dui vitae, maximus ultricies tortor. Phasellus sed nulla sit amet justo porttitor accumsan. Aenean at molestie nulla. Cras rhoncus lacinia interdum. Vestibulum id risus id velit pretium commodo et sit amet nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam eget sapien non dolor lobortis tincidunt. Mauris quis ligula fermentum, vehicula tortor sit amet, fermentum tortor. Integer aliquam scelerisque purus at fringilla. Etiam risus orci, eleifend ut eros ut, molestie bibendum erat. Maecenas non elit ac leo lacinia efficitur.</p>
+        </div>
+
+        <!-- START MAN PARRISH-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/mr-thing/man-parrish-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>Man Parrish - Hip Hop Be Bop (Don't Stop) <span>Polydor 1982</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="manParrishSleeve">
+                        <img class='front' src="/content/mr-thing/man-parrish-sleeve.jpg" />
+                        <img class='back' src="/content/mr-thing/man-parrish-back.jpg" />
+                        <img class='spine' src="/content/mr-thing/man-parrish-spine.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("B104");'></a>
+                    
+                    <div class="audioLink" id='birthdayPartyAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>Man Parrish</strong><br/>Hip Hop Be Bop</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Released in 1968, The Byrds’ fifth album saw the group make their most concerted grab for psychedelic experimentation. It’s an album of which Nick’s friend and arranger Robert Kirby was very fond, so it’s not too presumptuous to imagine that Nick might have heard it during the pair’s time at Cambridge. It’s worth noting also, that prior to Tribal Gathering, no group had thought to attempt a pop song in a 5/4 time signature – although at around the same time, Nick famously wrote River Man. Perhaps there’s a causal connection?</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>-->
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START MAN PARRISH-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/mr-thing/electro-4-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>Various Artists - Electro 4 <span>Polydor 1982</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="electro4Sleeve">
+                        <img class='front' src="/content/mr-thing/electro-4-sleeve.jpg" />
+                        <img class='back' src="/content/mr-thing/electro-4-back.jpg" />
+                        <img class='spine' src="/content/mr-thing/man-parrish-spine.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("B104");'></a>
+                    
+                    <div class="audioLink" id='birthdayPartyAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>Man Parrish</strong><br/>Hip Hop Be Bop</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Released in 1968, The Byrds’ fifth album saw the group make their most concerted grab for psychedelic experimentation. It’s an album of which Nick’s friend and arranger Robert Kirby was very fond, so it’s not too presumptuous to imagine that Nick might have heard it during the pair’s time at Cambridge. It’s worth noting also, that prior to Tribal Gathering, no group had thought to attempt a pop song in a 5/4 time signature – although at around the same time, Nick famously wrote River Man. Perhaps there’s a causal connection?</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>-->
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START MAN PARRISH-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/mr-thing/ultimate-trax-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>Various Artists - Ultimate Trax <span>Polydor 1982</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="ultimateTraxSleeve">
+                        <img class='front' src="/content/mr-thing/ultimate-trax-sleeve.jpg" />
+                        <img class='back' src="/content/mr-thing/ultimate-trax-back.jpg" />
+                        <img class='spine' src="/content/mr-thing/man-parrish-spine.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("B104");'></a>
+                    
+                    <div class="audioLink" id='birthdayPartyAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>Man Parrish</strong><br/>Hip Hop Be Bop</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Released in 1968, The Byrds’ fifth album saw the group make their most concerted grab for psychedelic experimentation. It’s an album of which Nick’s friend and arranger Robert Kirby was very fond, so it’s not too presumptuous to imagine that Nick might have heard it during the pair’s time at Cambridge. It’s worth noting also, that prior to Tribal Gathering, no group had thought to attempt a pop song in a 5/4 time signature – although at around the same time, Nick famously wrote River Man. Perhaps there’s a causal connection?</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>-->
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START MAN PARRISH-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/mr-thing/jazzy-jeff-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>Various Artists - Ultimate Trax <span>Polydor 1982</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="JazzyJeffSleeve">
+                        <img class='front' src="/content/mr-thing/jazzy-jeff-sleeve.jpg" />
+                        <img class='back' src="/content/mr-thing/jazzy-jeff-back.jpg" />
+                        <img class='spine' src="/content/mr-thing/man-parrish-spine.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("B104");'></a>
+                    
+                    <div class="audioLink" id='birthdayPartyAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>Man Parrish</strong><br/>Hip Hop Be Bop</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Released in 1968, The Byrds’ fifth album saw the group make their most concerted grab for psychedelic experimentation. It’s an album of which Nick’s friend and arranger Robert Kirby was very fond, so it’s not too presumptuous to imagine that Nick might have heard it during the pair’s time at Cambridge. It’s worth noting also, that prior to Tribal Gathering, no group had thought to attempt a pop song in a 5/4 time signature – although at around the same time, Nick famously wrote River Man. Perhaps there’s a causal connection?</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>-->
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+        <!-- START BIRTHDAY PARTY-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/mr-thing/main-source-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>Main Source - Live at the Barbecue <span>Wild Pitch 1991</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="birthdayPartySleeve">
+                        <img class='front' src="/content/mr-thing/main-source-sleeve.jpg" />
+                        <img class='back' src="/content/mr-thing/main-source-back.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("B104");'></a>
+                    
+                    <div class="audioLink" id='birthdayPartyAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>Birthday Party</strong><br/>The Friend Catcher</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Released in 1968, The Byrds’ fifth album saw the group make their most concerted grab for psychedelic experimentation. It’s an album of which Nick’s friend and arranger Robert Kirby was very fond, so it’s not too presumptuous to imagine that Nick might have heard it during the pair’s time at Cambridge. It’s worth noting also, that prior to Tribal Gathering, no group had thought to attempt a pop song in a 5/4 time signature – although at around the same time, Nick famously wrote River Man. Perhaps there’s a causal connection?</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>-->
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START CABARET VOLTAIRE-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/cabaret-voltaire-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>Cabaret Voltaire - Seconds Too Late <span>Rough Trade 1980</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="cabaretVoltaireSleeve">
+                        <img class='front' src="/content/simon-raymonde/cabaret-voltaire-sleeve.jpg" />
+                        <img class='back' src="/content/simon-raymonde/cabaret-voltaire-back.jpg" />                       
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("B104");'></a>
+                    
+                    <div class="audioLink" id='cabaretVoltaireAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>Cabaret Voltaire</strong><br/>Seconds Too Late</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Released in 1968, The Byrds’ fifth album saw the group make their most concerted grab for psychedelic experimentation. It’s an album of which Nick’s friend and arranger Robert Kirby was very fond, so it’s not too presumptuous to imagine that Nick might have heard it during the pair’s time at Cambridge. It’s worth noting also, that prior to Tribal Gathering, no group had thought to attempt a pop song in a 5/4 time signature – although at around the same time, Nick famously wrote River Man. Perhaps there’s a causal connection?</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START IAN DURY-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/ian-dury-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>Ian Dury & The Blockheads - Superman's Big Sister <span>Stiff 1980</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="ianDurySleeve">
+                        <img class='front' src="/content/simon-raymonde/ian-dury-sleeve.jpg" />
+                        <img class='back' src="/content/simon-raymonde/ian-dury-back.jpg" />                       
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("B104");'></a>
+                    
+                    <div class="audioLink" id='ianDuryAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>Ian Dury & The Blockheads</strong><br/>Superman's Big Sister</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Released in 1968, The Byrds’ fifth album saw the group make their most concerted grab for psychedelic experimentation. It’s an album of which Nick’s friend and arranger Robert Kirby was very fond, so it’s not too presumptuous to imagine that Nick might have heard it during the pair’s time at Cambridge. It’s worth noting also, that prior to Tribal Gathering, no group had thought to attempt a pop song in a 5/4 time signature – although at around the same time, Nick famously wrote River Man. Perhaps there’s a causal connection?</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+
+        <!-- DIF JUZ-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/dif-juz-header-1.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>Dif Juz - Huremics <span>4AD 1981</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="difJuzSleeve">
+                        <img class='front' src="/content/simon-raymonde/dif-juz-sleeve-1.jpg" />
+                        <img class='back' src="/content/simon-raymonde/dif-juz-back-1.jpg" />
+                        <img class='spine' src="/content/simon-raymonde/dif-juz-spine-1.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("S072");'></a>
+                    
+                    <div class="audioLink" id='difJuzAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>Dif Juz</strong><br/>Hu</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Given that she was signed to Dandelion – the label that John Peel ran together with Clive Selwood – it’s no surprise to see the rich cello-like tones of Bridget St. John well represented in John’s collection. Like Nick, commercial success eluded Bridget. The two often found themselves sharing the bill at Les Cousins from 1969. In Patrick Humphries’ Nick Drake: The Biography, she says, “My memories of him playing are of a tall, lanky long-legged young man – always seated cross-legged. I loved a lot of his music – especially from the Bryter Layter period: It was John and Beverley [Martyn] who introduced me to him. I remember we both opened for Fairport Convention in Croydon, and both of us felt good about our performances. Karl Dallas [from Melody Maker] reviewed it and obviously hated both of us equally. [He wrote] ‘…why did the organisers make us sit through almost an hour of sheer tedium before the interval instead of letting the Fairports have the whole show to themselves?’”</p>
+                    
+                    <!--<p class="pullQuote"><span class="green"></span></p>-->
+                    
+                    <p>Now based in New York, Bridget continues to write and record. She returns to Britain for the occasional intimate show, and she remains a captivating performer.</p>
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- DIF JUZ 2-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/dif-juz-header-2.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>Dif Juz - Vibrating Air <span>4AD 1981</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="difJuz2Sleeve">
+                        <img class='front' src="/content/simon-raymonde/dif-juz-sleeve-2.jpg" />
+                        <img class='back' src="/content/simon-raymonde/dif-juz-back-2.jpg" />
+                        <img class='spine' src="/content/simon-raymonde/dif-juz-spine-2.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("S072");'></a>
+                    
+                    <div class="audioLink" id='difJuz2Audio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>Dif Juz</strong><br/>HESET</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Given that she was signed to Dandelion – the label that John Peel ran together with Clive Selwood – it’s no surprise to see the rich cello-like tones of Bridget St. John well represented in John’s collection. Like Nick, commercial success eluded Bridget. The two often found themselves sharing the bill at Les Cousins from 1969. In Patrick Humphries’ Nick Drake: The Biography, she says, “My memories of him playing are of a tall, lanky long-legged young man – always seated cross-legged. I loved a lot of his music – especially from the Bryter Layter period: It was John and Beverley [Martyn] who introduced me to him. I remember we both opened for Fairport Convention in Croydon, and both of us felt good about our performances. Karl Dallas [from Melody Maker] reviewed it and obviously hated both of us equally. [He wrote] ‘…why did the organisers make us sit through almost an hour of sheer tedium before the interval instead of letting the Fairports have the whole show to themselves?’”</p>
+                    
+                    <!--<p class="pullQuote"><span class="green"></span></p>-->
+                    
+                    <p>Now based in New York, Bridget continues to write and record. She returns to Britain for the occasional intimate show, and she remains a captivating performer.</p>
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START associates-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/associates-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>The Associates - White Car in Germany <span>Situation 2 1981</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="associatesSleeve">
+                        <img class='front' src="/content/simon-raymonde/associates-sleeve.jpg" />
+                        <img class='back' src="/content/simon-raymonde/associates-back.jpg" />
+                        <img class='spine' src="/content/simon-raymonde/associates-spine.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("S072");'></a>
+                    
+                    <div class="audioLink" id='associatesAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>The Associates</strong><br/>White Car in Germany</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Given that she was signed to Dandelion – the label that John Peel ran together with Clive Selwood – it’s no surprise to see the rich cello-like tones of Bridget St. John well represented in John’s collection. Like Nick, commercial success eluded Bridget. The two often found themselves sharing the bill at Les Cousins from 1969. In Patrick Humphries’ Nick Drake: The Biography, she says, “My memories of him playing are of a tall, lanky long-legged young man – always seated cross-legged. I loved a lot of his music – especially from the Bryter Layter period: It was John and Beverley [Martyn] who introduced me to him. I remember we both opened for Fairport Convention in Croydon, and both of us felt good about our performances. Karl Dallas [from Melody Maker] reviewed it and obviously hated both of us equally. [He wrote] ‘…why did the organisers make us sit through almost an hour of sheer tedium before the interval instead of letting the Fairports have the whole show to themselves?’”</p>
+                    
+                    <!--<p class="pullQuote"><span class="green"></span></p>-->
+                    
+                    <p>Now based in New York, Bridget continues to write and record. She returns to Britain for the occasional intimate show, and she remains a captivating performer.</p>
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START DROWNING-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/drowning-craze-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>The Drowning Craze - Storage Case <span>Situation 2 1982</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="drowningCrazeSleeve">
+                        <img class='front' src="/content/simon-raymonde/drowning-craze-sleeve.jpg" />
+                        <img class='back' src="/content/simon-raymonde/drowning-craze-back.jpg" />                       
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("B104");'></a>
+                    
+                    <div class="audioLink" id='drowningCrazeAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>The Drowning Craze</strong><br/>Storage Case</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Released in 1968, The Byrds’ fifth album saw the group make their most concerted grab for psychedelic experimentation. It’s an album of which Nick’s friend and arranger Robert Kirby was very fond, so it’s not too presumptuous to imagine that Nick might have heard it during the pair’s time at Cambridge. It’s worth noting also, that prior to Tribal Gathering, no group had thought to attempt a pop song in a 5/4 time signature – although at around the same time, Nick famously wrote River Man. Perhaps there’s a causal connection?</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START CERTAIN RATIO-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/certain-ratio-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>A Certain Ratio - Double 12"  <span>Factory 1981</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="certainRatioSleeve">
+                        <img class='front' src="/content/simon-raymonde/certain-ratio-sleeve.jpg" />
+                        <img class='back' src="/content/simon-raymonde/certain-ratio-back.jpg" />
+                        <img class='spine' src="/content/simon-raymonde/certain-ratio-spine.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("S072");'></a>
+                    
+                    <div class="audioLink" id='certainRatioAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>A Certain Ratio</strong><br/>Flight</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Given that she was signed to Dandelion – the label that John Peel ran together with Clive Selwood – it’s no surprise to see the rich cello-like tones of Bridget St. John well represented in John’s collection. Like Nick, commercial success eluded Bridget. The two often found themselves sharing the bill at Les Cousins from 1969. In Patrick Humphries’ Nick Drake: The Biography, she says, “My memories of him playing are of a tall, lanky long-legged young man – always seated cross-legged. I loved a lot of his music – especially from the Bryter Layter period: It was John and Beverley [Martyn] who introduced me to him. I remember we both opened for Fairport Convention in Croydon, and both of us felt good about our performances. Karl Dallas [from Melody Maker] reviewed it and obviously hated both of us equally. [He wrote] ‘…why did the organisers make us sit through almost an hour of sheer tedium before the interval instead of letting the Fairports have the whole show to themselves?’”</p>
+                    
+                    <!--<p class="pullQuote"><span class="green"></span></p>-->
+                    
+                    <p>Now based in New York, Bridget continues to write and record. She returns to Britain for the occasional intimate show, and she remains a captivating performer.</p>
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START SCRITTI POLITTI-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/scritti-politti-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>Scritti Politti - Faithless  <span>Rough Trade 1982</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="scrittiPolittiSleeve">
+                        <img class='front' src="/content/simon-raymonde/scritti-politti-sleeve.jpg" />
+                        <img class='back' src="/content/simon-raymonde/scritti-politti-back.jpg" />
+                        <img class='spine' src="/content/simon-raymonde/scritti-politti-spine.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("S072");'></a>
+                    
+                    <div class="audioLink" id='scrittiPolittiAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>Scritti Politti</strong><br/>Faithless</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Given that she was signed to Dandelion – the label that John Peel ran together with Clive Selwood – it’s no surprise to see the rich cello-like tones of Bridget St. John well represented in John’s collection. Like Nick, commercial success eluded Bridget. The two often found themselves sharing the bill at Les Cousins from 1969. In Patrick Humphries’ Nick Drake: The Biography, she says, “My memories of him playing are of a tall, lanky long-legged young man – always seated cross-legged. I loved a lot of his music – especially from the Bryter Layter period: It was John and Beverley [Martyn] who introduced me to him. I remember we both opened for Fairport Convention in Croydon, and both of us felt good about our performances. Karl Dallas [from Melody Maker] reviewed it and obviously hated both of us equally. [He wrote] ‘…why did the organisers make us sit through almost an hour of sheer tedium before the interval instead of letting the Fairports have the whole show to themselves?’”</p>
+                    
+                    <!--<p class="pullQuote"><span class="green"></span></p>-->
+                    
+                    <p>Now based in New York, Bridget continues to write and record. She returns to Britain for the occasional intimate show, and she remains a captivating performer.</p>
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START SINGERS & PLAYERS-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/singers-players-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>Singers & Players - Revenge of the Underdog <span>Situation 2 1982</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="singersPlayersSleeve">
+                        <img class='front' src="/content/simon-raymonde/singers-players-sleeve.jpg" />
+                        <img class='back' src="/content/simon-raymonde/singers-players-back.jpg" />
+                        <img class='spine' src="/content/simon-raymonde/singers-players-spine.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("L103");'></a>
+                    
+                    <div class="audioLink" id='singersPlayersAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>Singers & Players</strong><br/>Dungeon</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Two years later, it would turn out that Paul Wheeler’s then-wife Diana would find herself in the employ of Lennon and Yoko Ono. As one of Lennon’s personal assistants based at Lennon’s Tittenhurst Estate, Diana, along with Paul Wheeler, frequently paid host to Nick. Speaking with Patrick Humphries, Nick’s friend recalled that “John and Yoko had gone [to America, never to return] and Nick seemed to fit with the ‘ghost house’ image of Tittenhurst.” In the summer of 1972, Wheeler recalled playing Lennon’s unflinchingly cathartic John Lennon/Plastic Ono Band album to his friend for the first time and seeing him look ‘visibly shocked’. Perhaps this would embolden him into similar lyrical candour in Black Eyed Dog and some of his other final songs.</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START GRANDMASTER FLASH-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/grandmaster-flash-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>Grandmaster Flash - The Message <span>Sugar Hill 1982</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="grandmasterFlashSleeve">
+                        <img class='front' src="/content/simon-raymonde/grandmaster-flash-sleeve.jpg" />
+                        <img class='back' src="/content/simon-raymonde/grandmaster-flash-back.jpg" />
+                        <img class='spine' src="/content/simon-raymonde/grandmaster-flash-spine.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("L103");'></a>
+                    
+                    <div class="audioLink" id='grandmasterFlashAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>Grandmaster Flash</strong><br/>The Message</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Two years later, it would turn out that Paul Wheeler’s then-wife Diana would find herself in the employ of Lennon and Yoko Ono. As one of Lennon’s personal assistants based at Lennon’s Tittenhurst Estate, Diana, along with Paul Wheeler, frequently paid host to Nick. Speaking with Patrick Humphries, Nick’s friend recalled that “John and Yoko had gone [to America, never to return] and Nick seemed to fit with the ‘ghost house’ image of Tittenhurst.” In the summer of 1972, Wheeler recalled playing Lennon’s unflinchingly cathartic John Lennon/Plastic Ono Band album to his friend for the first time and seeing him look ‘visibly shocked’. Perhaps this would embolden him into similar lyrical candour in Black Eyed Dog and some of his other final songs.</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START ROBERT WYATT-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/robert-wyatt-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>Robert Wyatt - Shipbuilding <span>Rough Trade 1983</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="robertWyattSleeve">
+                        <img class='front' src="/content/simon-raymonde/robert-wyatt-sleeve.jpg" />
+                        <img class='back' src="/content/simon-raymonde/robert-wyatt-back.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("B104");'></a>
+                    
+                    <div class="audioLink" id='robertWyattAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>Robert Wyatt</strong><br/>Shipbuilding</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Released in 1968, The Byrds’ fifth album saw the group make their most concerted grab for psychedelic experimentation. It’s an album of which Nick’s friend and arranger Robert Kirby was very fond, so it’s not too presumptuous to imagine that Nick might have heard it during the pair’s time at Cambridge. It’s worth noting also, that prior to Tribal Gathering, no group had thought to attempt a pop song in a 5/4 time signature – although at around the same time, Nick famously wrote River Man. Perhaps there’s a causal connection?</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>-->
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START NEW ORDER-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/new-order-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>New Order - Blue Monday <span>Factory 1983</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="newOrderSleeve">
+                        <img class='front' src="/content/simon-raymonde/new-order-sleeve.jpg" />
+                        <img class='back' src="/content/simon-raymonde/new-order-back.jpg" />
+                        <img class='spine' src="/content/simon-raymonde/new-order-spine.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("L103");'></a>
+                    
+                    <div class="audioLink" id='newOrderAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>New Order</strong><br/>Blue Monday</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Two years later, it would turn out that Paul Wheeler’s then-wife Diana would find herself in the employ of Lennon and Yoko Ono. As one of Lennon’s personal assistants based at Lennon’s Tittenhurst Estate, Diana, along with Paul Wheeler, frequently paid host to Nick. Speaking with Patrick Humphries, Nick’s friend recalled that “John and Yoko had gone [to America, never to return] and Nick seemed to fit with the ‘ghost house’ image of Tittenhurst.” In the summer of 1972, Wheeler recalled playing Lennon’s unflinchingly cathartic John Lennon/Plastic Ono Band album to his friend for the first time and seeing him look ‘visibly shocked’. Perhaps this would embolden him into similar lyrical candour in Black Eyed Dog and some of his other final songs.</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START SPECIAL AKA-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/special-aka-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>Special AKA - In The Studio With <span>Two Tone 1984</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="specialSleeve">
+                        <img class='front' src="/content/simon-raymonde/special-aka-sleeve.jpg" />
+                        <img class='back' src="/content/simon-raymonde/special-aka-back.jpg" />
+                        <img class='spine' src="/content/simon-raymonde/special-aka-spine.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("L103");'></a>
+                    
+                    <div class="audioLink" id='specialAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>Special AKA</strong><br/>War Crimes</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Two years later, it would turn out that Paul Wheeler’s then-wife Diana would find herself in the employ of Lennon and Yoko Ono. As one of Lennon’s personal assistants based at Lennon’s Tittenhurst Estate, Diana, along with Paul Wheeler, frequently paid host to Nick. Speaking with Patrick Humphries, Nick’s friend recalled that “John and Yoko had gone [to America, never to return] and Nick seemed to fit with the ‘ghost house’ image of Tittenhurst.” In the summer of 1972, Wheeler recalled playing Lennon’s unflinchingly cathartic John Lennon/Plastic Ono Band album to his friend for the first time and seeing him look ‘visibly shocked’. Perhaps this would embolden him into similar lyrical candour in Black Eyed Dog and some of his other final songs.</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START SUGAR CUBEs-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/sugar-cubes-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>The Sugar Cubes - Birthday <span>One Little Indian 1987</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="sugarCubesSleeve">
+                        <img class='front' src="/content/simon-raymonde/sugar-cubes-sleeve.jpg" />
+                        <img class='back' src="/content/simon-raymonde/sugar-cubes-back.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("B104");'></a>
+                    
+                    <div class="audioLink" id='sugarCubesAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>The Sugar Cubes</strong><br/>Birthday</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Released in 1968, The Byrds’ fifth album saw the group make their most concerted grab for psychedelic experimentation. It’s an album of which Nick’s friend and arranger Robert Kirby was very fond, so it’s not too presumptuous to imagine that Nick might have heard it during the pair’s time at Cambridge. It’s worth noting also, that prior to Tribal Gathering, no group had thought to attempt a pop song in a 5/4 time signature – although at around the same time, Nick famously wrote River Man. Perhaps there’s a causal connection?</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>-->
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START PUBLIC ENEMY-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/public-enemy-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>Public Enemy - Fight the Power <span>Motown 1989</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="publicEnemySleeve">
+                        <img class='front' src="/content/simon-raymonde/public-enemy-sleeve.jpg" />
+                        <img class='back' src="/content/simon-raymonde/public-enemy-back.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("B104");'></a>
+                    
+                    <div class="audioLink" id='publicEnemyAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>Public Enemy</strong><br/>Fight the Power</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Released in 1968, The Byrds’ fifth album saw the group make their most concerted grab for psychedelic experimentation. It’s an album of which Nick’s friend and arranger Robert Kirby was very fond, so it’s not too presumptuous to imagine that Nick might have heard it during the pair’s time at Cambridge. It’s worth noting also, that prior to Tribal Gathering, no group had thought to attempt a pop song in a 5/4 time signature – although at around the same time, Nick famously wrote River Man. Perhaps there’s a causal connection?</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>-->
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        <!-- START STONE ROSES-->       
+        <div class="record">
+            <div class="headimage parallax">
+                <img src="/content/simon-raymonde/stone-roses-header.jpg">    
+            </div>
+                  
+            <div class="wrapper recordTitle">
+                <h2>The Stone Roses - She Bangs the Drums <span>Silvertone 1989</span></h2>
+            </div>
+            <div class="main wrapper clearfix"> 
+                <div class="sleeve">
+                    <div class="sleeve3d" id="stoneRosesSleeve">
+                        <img class='front' src="/content/simon-raymonde/stone-roses-sleeve.jpg" />
+                        <img class='back' src="/content/simon-raymonde/stone-roses-back.jpg" />
+                        <img class='spine' src="/content/simon-raymonde/stone-roses-spine.jpg" />
+                    </div>
+                    <a class="albumLink" onClick='popupAlbumInfo("L103");'></a>
+                    
+                    <div class="audioLink" id='stoneRosesAudio'>
+                        <div class="playBtn play"></div>
+                        <div class="audioInfo"><span><strong>The Stone Roses</strong><br/>She Bangs the Drums</span></div>
+                    </div>
+                </div>
+                <div class="text-1">
+      
+                    <p>Two years later, it would turn out that Paul Wheeler’s then-wife Diana would find herself in the employ of Lennon and Yoko Ono. As one of Lennon’s personal assistants based at Lennon’s Tittenhurst Estate, Diana, along with Paul Wheeler, frequently paid host to Nick. Speaking with Patrick Humphries, Nick’s friend recalled that “John and Yoko had gone [to America, never to return] and Nick seemed to fit with the ‘ghost house’ image of Tittenhurst.” In the summer of 1972, Wheeler recalled playing Lennon’s unflinchingly cathartic John Lennon/Plastic Ono Band album to his friend for the first time and seeing him look ‘visibly shocked’. Perhaps this would embolden him into similar lyrical candour in Black Eyed Dog and some of his other final songs.</p>
+                    
+                    <!--<p class="pullQuote"><span class="">"Lorem ipsum dolor sit amet, consectetur"</span></p>
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+                    
+                </div>
+            </div>
+        </div><!--END RECORD-->
+
+        
+
+        <div style="clear:both"></div>
+
+        <div class="share">
+            <span>Share This Page</span>
+        </div>
+        
+        <div style="clear:both"></div>
+
+        <div style="height:235px;"></div>
+
+         <?php
+            // instead of having the same player code on every page, it has been moved to it's own file.
+            // including this html file will just insert it right here in the page.
+            include_once('../../include/elements/player.html'); 
+        ?>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            
+        </script>
+
+        
+        <!-- the following styles must be at the bottom so they load after video-js.css -->
+        <style>
+            .video-js {padding-top: 56.25%}
+            .vjs-fullscreen {padding-top: 0px}
+        </style>
+        <div id='playerPile'>
+            
+        </div>
+        <?php
+            // like the player - the popup (used by fancybox to show records) 
+            // has been moved to it's own file so that it can be changed across 
+            // all recordboxes in one go if needed
+            include_once('../../include/elements/popup.html'); 
+        ?>
+    </body>
+</html>

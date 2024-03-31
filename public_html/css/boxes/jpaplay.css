@@ -1,0 +1,65 @@
+
+#jpaControls { right:0px; top: 0px; position: absolute;font-family: arial;}
+
+#jpaVolumeBar { width: 60px; height: 60px; background-color: #000000; position: fixed; bottom: 0px; right: 0px;}
+#jpaVolumeLevel { width: 50px; height: 0px; background-color: #ffff00; position: absolute; left: 5px;}
+
+#playerPile { position: absolute; top: -6000px; height: 1px;}
+
+.fade {
+	opacity: 1;
+	-webkit-transition: opacity .25s  ease-in-out, border-color .25s ease-in-out;
+	-moz-transition: opacity .25s  ease-in-out, border-color .25s ease-in-out;
+	-o-transition: opacity .25s  ease-in-out, border-color .25s ease-in-out;
+	transition: opacity .25s ease-in-out, border-color .25s ease-in-out;
+}
+.fade:hover{opacity:0.5;}
+
+.videoContainer { display: block; position: relative; opacity: 0;height:auto;}
+.videoShield { display: block; position: absolute; background-color: #333333; opacity: 1; }
+.videoContainer .videoButton { display: block; position: absolute; margin:0px; padding: 0px; z-index: 20;}
+.videoContainer .videoButton.pause { display: none;}
+
+.audioContainer { display: block; width: 300px; height: 44px; overflow:hidden; background-color: #cccc00;}
+.audioContainer .playPause { height: 44px; width: 44px; float:left;}
+
+.mediaCaption { float: right; margin-right: 5px;}
+.mediaCaption p { margin: 0px;}
+
+#jpaPause { display: none;}
+#fakeJpaPause { display: none;}
+
+#jpaMute img.muted { display: none;}
+
+#jpaMute.on .notMuted { display: none;}
+#jpaMute.on .muted { display: inline;}
+
+#jpaMute:not(.on) .notMuted { display: inline;}
+#jpaMute.not(.on) .muted { display: none;}
+
+.playBtn, .fakePlayBtn {
+	cursor: pointer;
+	float:left;
+	background-image: url(../../img/boxes/play-pause.jpg);
+	background-size: 100% auto;
+	background-position: 0px 0%;
+	width: 60px;
+	height: 60px;
+	-webkit-transition: background-position .25s  ease-in-out, border-color .25s ease-in-out;
+	-moz-transition: background-position .25s  ease-in-out, border-color .25s ease-in-out;
+	-o-transition: background-position .25s  ease-in-out, border-color .25s ease-in-out;
+	transition: background-position .25s ease-in-out, border-color .25s ease-in-out;
+}
+
+.playBtn.play, .fakePlayBtn.play {
+	background-position: 0px 100%;
+}
+
+.playBtn.pause, .fakePlayBtn.pause {
+	background-position: 0px 0%;
+}
+
+#player { display: none;}
+
+/* just to stop social buttons riding to top of page whilst loading.... */
+#ajaxContent { min-height: 1000px;}

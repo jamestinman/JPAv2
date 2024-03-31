@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
+  <head>
+    <title>John Peel Albums</title>
+    <meta name="description" content="John Peel's Record Collection - the LP Album Shelves">
+    <meta name="author" content="www.klikhome.co.uk">
+    <!-- Frameworks -->
+    <script type="text/javascript" src="../js/libs/jquery.js"></script>
+    <script type="text/javascript" src="../js/libs/raphael-min.js"></script>
+    <script type="text/javascript" src="../js/libs/fancybox/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="../js/libs/galleria-1.4.2.min.js"></script>
+  	<script type="text/javascript" src="../js/libs/modernizr-2.5.3.min.js"></script>
+    <!-- John Peel libraries -->
+    <script type="text/javascript" src="../js/johnpeel.js"></script>
+    <script type="text/javascript" src="../js/popups.js"></script>
+    <script type="text/javascript" src="../js/recordbox.js"></script>
+    <!-- Stylesheets -->
+	  <link rel="stylesheet" href="../css/style.css">
+	  <link rel="stylesheet" href="../css/popups.css">
+  	<link rel="stylesheet" href="../js/libs/fancybox/jquery.fancybox.css">
+  	<!-- Default Snippet -->
+    <meta property="og:title" content="John Peel Archive : Vinyl LPs" />
+    <meta property="og:image" content="http://www.johnpeelarchive.com/albums/img/boxes/1.jpg" />
+    <meta property="og:description" content="Browse John Peel's Vinyl LP Collection" />
+  </head>
+  <body>
+    <!-- Necessary for Facebook -->
+    <div id="fb-root"></div>
+    <div id="theLetterShelf">
+      <!-- TAB -->
+      <div id="theTab" onClick='doAlbumPop();'>
+        <div id="yellowTriangle"></div>
+        <div id="tabArtist"></div>
+        <div id="theInfo">
+          <div class="infoCol">
+            <div id="tabAlbum"></div>
+            <div id="tabCardNum"></div>
+          </div>
+          <div class="infoCol">
+            <img id="tabThumb" width=100 />
+          </div>
+        </div>
+      </div>
+      <div id="topLogo" onClick="document.location.href=('index.html?letter='+letter);"></div>
+      <div id="bigMessage"></div>
+    </div>
+    <!-- POP-UP -->
+  	<div id="thePopUp" style="display: none;">
+      <div class="split">
+        <div class="section" id="popCard"></div>
+        <div class="section" id="popVideos"></div>
+        <div class="section" id="popListen"></div>
+        <div class="section" id="popInfo"></div>
+        <div class="section" id="popSessions"></div>
+        <hr />
+        <div class="section" id="popSocial"></div>
+      </div>
+      <div class="split">
+        <div class="section" id="popCoverFlow"></div>
+      </div>
+    </div><!-- #thePopUp-->
+    <div id='debug'></div>
+
+    <!-- SOCIAL MEDIA APIs -->
+    <script type="text/javascript" src="//apis.google.com/js/plusone.js">{lang: 'en-GB', parsetags: 'explicit'}</script>
+    <script type="text/javascript" src="//connect.facebook.net/en_GB/all.js#xfbml=1&appId=28316481223"></script>
+    <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    <script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+    <!-- ANALYTICS -->
+    <script>
+      var _gaq=[['_setAccount','UA-31313224-1'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  </body>
+</html>

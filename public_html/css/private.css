@@ -1,0 +1,67 @@
+body {
+  font-family: Helvetica;
+}
+#website {
+	position: relative;
+}
+#leftCol {
+	float: left;
+	width: 25%;
+	height: 900px;
+	background-color: #ccc;
+}
+#leftCol ul {
+	margin: 0;
+}
+#leftCol li {
+	margin: 0;
+	padding: 5px;
+	background-color: #aaa;
+}
+#leftCol li.selected {
+	color: #fff;
+	background-color: #700;
+}
+#leftCol li.selected a {
+	color: #fff;
+}
+#listCol {
+	float: left;
+	width: 75%;
+}
+.klikSection { margin: 0px 4px 5px 0px; border:1px solid #ddd; background-color: #eee; }
+.klikSection table { border: 0px; }
+.klikSectionHead { background-color: #badbea; font-weight: bold; padding: 5px; }
+.klikSectionHead.pink { background-color: #E7A1B0; }
+.klikSectionHead.green { background-color: #A1E7B0; }
+.klikSection.pink { /* background-color: #feeffe; */ }
+.history p { font-size: 0.8em; }
+.red, .red td { background-color: #f33; }
+.orange, .orange td { background-color: #fa0; }
+.yellow, .yellow td { background-color: #dd4; }
+.green, .green td { background-color: #4d4; }
+.grey, .grey td { background-color: #ccc; text-align: right;}
+.small, .small td { text-align: right; font-size: 0.9em; }
+.small td img { width: 80px; }
+.small { opacity: 0.75 }
+.grey td img { width: 50%; }
+.small {font-size: 0.8em; }
+.key {font-size: 0.8em; padding: 2px; }
+.inverse { color: #fff; background: #000; padding: 2px; }
+form input.bigSyncBtn { font-size:4em; height: 44px;}
+form input.smallSyncBtn { font-size:2em; }
+.msg {color:#e33;}
+.altVersion { font-weight: bold; }
+table td { border: 1px solid #ccc; text-align: right; }
+table th { background-color: #eee;padding: 2px;}
+.recordSyncInfo { background-color: #eee; padding: 15px; margin: 15px; border: 1px solid #555; }
+.overall { font-weight:bold; background-color:#ddf; }
+table.goLeft td { text-align: left; }
+.hidden { display: none; }
+.blank { background-color: #ccc; }
+input[name='price'] { text-align:right; }
+tr.edited td { background-color: #fa0; }
+tr.saved td { background-color: #dd4; }
+td.iBheader { text-align: left; font-size: 2em; padding: 5px; border-bottom: 3px;}
+.loading { font-weight: bold; color: #e33; }
+.loaded { font-weight: bold; color: #3e3; }

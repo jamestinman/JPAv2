@@ -1,0 +1,1 @@
+rename.py --trim-front=10 --replace=00 A00 *.jpg
