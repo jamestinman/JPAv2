@@ -854,8 +854,9 @@ function getBoxIcons($recordID) {
 }
 
 function getRecordIcons($recordID) {
+    if (!$recordID) return false;
     $record=getRecord($recordID);
-    if (!$record) return false;
+    if (!$record || !is_array($record)) return false;
     // get other records by this artist
     $limit=12;
     $otherRecords=searchRecords(array('avoidRecordID'=>$record['recordID'],'artist'=>$record['artist'],'limit'=>$limit));
